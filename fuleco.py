@@ -1,4 +1,6 @@
 import sqlite3
+from tkinter import *
+
 xd='s'
 while xd != 'n':
 
@@ -21,3 +23,7 @@ while xd != 'n':
     banco.commit()
     
     xd = input('Deseja inserir mais dados?(s/n)')
+
+dados = cursor.execute('''SELECT * FROM fuleco''')
+for cd in dados:
+    print(cd[0], cd[1], cd[2])
